@@ -11,11 +11,9 @@ namespace Solid
 			Name = name;
 		}
 
-		public void Notify(string message)
+		public virtual void Notify(INotifier notifier, string message)
 		{
-			Console.WriteLine($"Person: {Name}");
-			Console.WriteLine($"Email: {message}");
-			Console.WriteLine("");
+			notifier.PrintNotification($"Person: {Name}", message);
 		}
 	}
 }

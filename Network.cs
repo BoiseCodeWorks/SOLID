@@ -5,12 +5,12 @@ namespace Solid
 {
 	public class Network
 	{
-		private Email notifier;
+		private INotifier notifier;
 		public List<Subscriber> Subscribers { get; set; }
 
-		public Network()
+		public Network(INotifier notifier)
 		{
-			notifier = new Email();
+			this.notifier = notifier;
 			Subscribers = new List<Subscriber>();
 		}
 
